@@ -26,14 +26,12 @@ tolerations: []
 
 affinity: {}
 
+credential_password_secret: 'name_secret'
+
 configuration:
   endpoint:
     scheme: 'https'
     host: 'rocketchat.example.com'
-  credentials:
-    name: 'example'
-    email: 'example@example.com'
-    password: 'changeme'
   severity_colors:
     warning: '#ffa500'
     critical: '#ff0000'

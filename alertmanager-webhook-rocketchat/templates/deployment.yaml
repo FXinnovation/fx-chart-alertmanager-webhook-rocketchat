@@ -29,11 +29,20 @@ spec:
             - name: AWR_ENDPOINT_HOST
               value: {{ .Values.configuration.endpoint.host }}
             - name: AWR_CREDENTIALS_NAME
-              value: {{ .Values.configuration.credentials.name }}
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.credential_password_secret }}"
+                  key: name
             - name: AWR_CREDENTIALS_EMAIL
-              value: {{ .Values.configuration.credentials.email }}
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.credential_password_secret }}"
+                  key: email
             - name: AWR_CREDENTIALS_PASSWORD
-              value: {{ .Values.configuration.credentials.password }}
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.credential_password_secret }}"
+                  key: password
             - name: AWR_SEVERITY_COLORS_WARNING
               value: {{ .Values.configuration.severity_colors.warning }}
             - name: AWR_SEVERITY_COLORS_CRITICAL
