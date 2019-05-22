@@ -25,3 +25,16 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+endpoint:
+  scheme: 'https'
+  host: 'rocketchat.example.com'
+credentials:
+  name: 'example'
+  email: 'example@example.com'
+  password: 'changeme'
+severity_colors:
+  warning: '#ffa500'
+  critical: '#ff0000'
+channel:
+  default_channel_name: 'example'
